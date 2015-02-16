@@ -21,20 +21,21 @@
 </head>
 <body>
 
-	Coding is <div id="magic"></div>
+	Hello world: <div id="magic"></div>
 
 	<script>
+	( function( ) {
 
-		var words = ["fun", "exciting", "about not giving up", "being helpful", "being open", "what I learned at CodingDojo!"],
+		var words = ["soft\xA0kitty", "warm\xA0kitty", "little\xA0ball\xA0of\xA0fur.", "happy\xA0kitty", "sleepy\xA0kitty", "purr\xA0purr\xA0purr."],
 			el = document.getElementById('magic'),
 			word_counter = 0,
 			character_counter = 0;
 
 		function updateText()
 		{
-			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
+			el.innerHTML += words[word_counter][character_counter++];
 
-			if(character_counter == words[word_counter].length)
+			if(character_counter == words[word_counter].length+1)
 			{
 				word_counter++; 	//choose a different word
 				character_counter = 0;	//start over with the first character of the word
@@ -46,7 +47,8 @@
 			}
 		}
 
-		setInterval(updateText,300);
+		setInterval(updateText,150);
+	} ( ) );
 
 	</script>
 
